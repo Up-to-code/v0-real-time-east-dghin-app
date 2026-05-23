@@ -10,44 +10,51 @@ export default function Page() {
   return (
     <div className="bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 py-20 text-center">
-          <h1 className="mb-6 text-5xl font-bold tracking-tight text-foreground md:text-6xl lg:text-7xl text-balance">
-            Find Your Perfect <span className="text-primary">Home</span>
+      <section 
+        className="relative h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(/hero-bg.jpg)',
+        }}
+      >
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/40" />
+        
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl text-balance leading-tight">
+            Find Your Perfect <span className="text-yellow-300">Home</span>
           </h1>
-          <p className="mb-8 text-xl text-muted-foreground md:text-2xl">
+          <p className="mb-8 text-lg text-gray-100 md:text-xl max-w-2xl mx-auto">
             Explore premium properties and connect with trusted real estate professionals
           </p>
 
           {/* Search Bar */}
-          <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center max-w-2xl mx-auto">
             <input
               type="text"
               placeholder="Search by location..."
-              className="rounded-lg border border-border bg-card px-6 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary w-full sm:w-80"
+              className="flex-1 rounded-lg border-0 bg-white px-6 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 shadow-lg"
             />
-            <Link href="/listings">
-              <Button className="w-full sm:w-auto bg-primary hover:opacity-90">
+            <Link href="/listings" className="w-full sm:w-auto">
+              <Button className="w-full bg-yellow-300 text-gray-900 hover:bg-yellow-200 font-semibold">
                 Search Properties
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
 
-          {/* Stats */}
-          <div className="grid gap-8 sm:grid-cols-3">
-            <div className="rounded-lg bg-card/50 p-6 border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">2,500+</div>
-              <p className="text-muted-foreground">Active Listings</p>
+          {/* Stats - positioned below with good spacing */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-16 max-w-3xl mx-auto">
+            <div className="rounded-lg bg-white/95 backdrop-blur p-6 shadow-lg">
+              <div className="text-3xl font-bold text-gray-900 mb-2">2,500+</div>
+              <p className="text-gray-600 font-medium">Active Listings</p>
             </div>
-            <div className="rounded-lg bg-card/50 p-6 border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">15,000+</div>
-              <p className="text-muted-foreground">Happy Clients</p>
+            <div className="rounded-lg bg-white/95 backdrop-blur p-6 shadow-lg">
+              <div className="text-3xl font-bold text-gray-900 mb-2">15,000+</div>
+              <p className="text-gray-600 font-medium">Happy Clients</p>
             </div>
-            <div className="rounded-lg bg-card/50 p-6 border border-border">
-              <div className="text-3xl font-bold text-primary mb-2">500+</div>
-              <p className="text-muted-foreground">Expert Agents</p>
+            <div className="rounded-lg bg-white/95 backdrop-blur p-6 shadow-lg">
+              <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
+              <p className="text-gray-600 font-medium">Expert Agents</p>
             </div>
           </div>
         </div>

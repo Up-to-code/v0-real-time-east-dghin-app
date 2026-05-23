@@ -282,9 +282,3 @@ export default function PropertyDetailPage() {
     </div>
   );
 }
-
-export function generateStaticParams() {
-  return mockProperties.map((property) => ({
-    id: property.id,
-  }));
-}
