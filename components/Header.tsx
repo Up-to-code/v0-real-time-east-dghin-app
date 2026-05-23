@@ -35,6 +35,12 @@ export function Header() {
             Browse
           </Link>
           <Link
+            href="/projects"
+            className="text-sm font-medium text-foreground transition-colors hover:text-primary"
+          >
+            Projects
+          </Link>
+          <Link
             href="/favorites"
             className="text-sm font-medium text-foreground transition-colors hover:text-primary"
           >
@@ -50,9 +56,11 @@ export function Header() {
 
         {/* Desktop CTA */}
         <div className="hidden items-center gap-4 md:flex">
-          <button className="rounded-md bg-primary px-6 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90">
-            Contact Agent
-          </button>
+          <Link href="/contact">
+            <button className="rounded-md bg-primary px-6 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90">
+              Contact
+            </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -87,6 +95,13 @@ export function Header() {
               Browse
             </Link>
             <Link
+              href="/projects"
+              className="text-sm font-medium text-foreground"
+              onClick={() => setIsOpen(false)}
+            >
+              Projects
+            </Link>
+            <Link
               href="/favorites"
               className="text-sm font-medium text-foreground"
               onClick={() => setIsOpen(false)}
@@ -100,9 +115,11 @@ export function Header() {
             >
               About
             </Link>
-            <button className="mt-2 w-full rounded-md bg-primary px-6 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90">
-              Contact Agent
-            </button>
+            <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <button className="mt-2 w-full rounded-md bg-primary px-6 py-2 font-medium text-primary-foreground transition-opacity hover:opacity-90">
+                Contact
+              </button>
+            </Link>
           </div>
         </div>
       )}
